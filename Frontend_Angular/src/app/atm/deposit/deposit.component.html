@@ -1,0 +1,24 @@
+<div class="deposit-container">
+  <h2>Deposit</h2>
+  <form (ngSubmit)="deposit()">
+    <div class="form-group">
+      <label for="accountNumber">Account Number:</label>
+      <input type="text" id="accountNumber" [(ngModel)]="depositData.accountNumber" name="accountNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" [(ngModel)]="depositData.amount" name="amount" required>
+    </div>
+    <div class="form-group">
+      <label for="pin">PIN:</label>
+      <input type="password" id="pin" [(ngModel)]="depositData.pin" name="pin" required>
+    </div>
+    <button type="submit" class="btn">Deposit</button>
+  </form>
+
+  <div *ngIf="messageType === 'success'" class="message success">
+    <img src="assets/tick.gif" alt="Success" class="response-gif">
+    <p class="message">{{ message }}</p>
+  </div>
+
+</div>
