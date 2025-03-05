@@ -1,0 +1,23 @@
+
+<nav>
+  <ul>
+    <li><a (click)="scrollTo('about-us')">About Us</a></li>
+    <li><a (click)="scrollTo('contact-us')">Contact Us</a></li>
+    <li><a (click)="scrollTo('faq')">FAQ</a></li>
+    <li><a (click)="scrollTo('footer')">Footer</a></li>
+    <li><a routerLink="/login">Login</a></li>
+  </ul>
+</nav>
+
+<div class="page-container">
+  <div class="slideshow-container">
+    <div *ngFor="let slide of slides; let i = index" class="mySlides" [class.active]="currentSlide === i">
+      <img [src]="slide.src" [alt]="slide.alt" class="slide-image">
+    </div>
+  </div>
+  
+  <app-about-us id="about-us"></app-about-us>
+  <app-contact-us id="contact-us"></app-contact-us>
+  <app-faq id="faq"></app-faq>
+  <app-footer id="footer"></app-footer>
+</div>
