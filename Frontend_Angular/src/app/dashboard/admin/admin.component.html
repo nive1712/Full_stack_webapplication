@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="assets/icon.png" alt="Logo" />
+  </div>
+  <ul>
+    <li><span class="admin-greeting">Hi, Admin</span></li>
+    <li><a routerLink="/logout">Logout</a></li>
+  </ul>
+</nav>
+<h2 class="dashboard-title">Admin Dashboard</h2>
+
+<div class="card-container">
+  <div class="card">
+    <img src="assets/approved-card-block.jpg" alt="Approve Card Block">
+    <div class="card-content">
+      <h3>Approve Card Block Status</h3>
+      <a routerLink="/admin/approve" routerLinkActive="active">Approve</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="assets/rejected-card-block.jpg" alt="Reject Card Block">
+    <div class="card-content">
+      <h3>Reject Card Block Status</h3>
+      <a routerLink="/admin/reject" routerLinkActive="active">Reject</a>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet> 
