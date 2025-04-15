@@ -1,0 +1,51 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="assets/icon.png" alt="Logo" />
+  </div>
+  <ul>
+    <li><a routerLink="/atm" routerLinkActive="active">ATM</a></li>
+    <li><a routerLink="/netbanking" routerLinkActive="active">NetBanking</a></li>
+    <li><a routerLink="/viewprofile" routerLinkActive="active">View Profile</a></li>
+    <li><a routerLink="/logout">Logout</a></li>
+  </ul>
+</nav>
+
+
+<div class="netbanking-container">
+
+  <div class="row">
+    <div class="netbanking-card" (click)="navigateTo('/netbanking/deposit')">
+      <img src="assets/deposit-image.jpg" alt="Deposit Image">
+      <a>Deposit</a>
+    </div>
+    <div class="netbanking-card" (click)="navigateTo('/netbanking/transfer')">
+      <img src="assets/transfer-image.jpg" alt="Transfer Image">
+      <a>Transfer</a>
+    </div>
+    <div class="netbanking-card" (click)="navigateTo('/netbanking/loan')">
+      <img src="assets/loan-image.jpg" alt="Loan Image">
+      <a>Loan Application</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="netbanking-card" (click)="navigateTo('/netbanking/pay-loan-due')">
+      <img src="assets/pay-loan-image.jpg" alt="Pay Loan Due Image">
+      <a>Pay Loan Due</a>
+    </div>
+    <div class="netbanking-card" (click)="navigateTo('/netbanking/budget-calculator')">
+      <img src="assets/budget-calculator-image.jpg" alt="Budget Calculator Image">
+      <a>Budget Calculator</a>
+    </div>
+    <div class="netbanking-card" (click)="navigateTo('/netbanking/card-block')">
+      <img src="assets/block-card-image.jpg" alt="Block Card Image">
+      <a>Block Card</a>
+    </div>
+    <div class="netbanking-card" (click)="navigateTo('/netbanking/card-unblock')">
+      <img src="assets/unblock-card-image.jpg" alt="Unblock Card Image">
+      <a>Unblock Card</a>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
