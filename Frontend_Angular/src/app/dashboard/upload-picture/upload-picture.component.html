@@ -1,0 +1,26 @@
+<div class="upload-container">
+  <h2>Upload Profile Picture</h2>
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" [(ngModel)]="username" placeholder="Enter your username" />
+
+  <div *ngIf="profileImageUrl; else defaultIcon">
+    <div class="profile-icon-holder">
+      <img [src]="profileImageUrl" alt="Profile Picture" class="profile-icon" />
+    </div>
+  </div>
+  <ng-template #defaultIcon>
+    <div class="profile-icon-holder">
+      <img src="/assets/default-icon.jpg" alt="Default Profile Icon" class="profile-icon" />
+    </div>
+  </ng-template>
+
+  <label for="file">Select Picture:</label>
+  <input type="file" id="file" (change)="onFileSelected($event)" />
+   <br>
+  <button (click)="uploadPicture()"> Upload </button>
+  <div>
+    <br>
+  <a routerLink="/viewprofile">View Profile</a>
+</div>
+</div>
