@@ -1,0 +1,18 @@
+<div class="profile-container" *ngIf="profile">
+  <h2>User Profile</h2>
+
+  <div class="profile-icon-holder">
+    <img *ngIf="profileImageUrl" [src]="profileImageUrl" class="profile-icon" />
+  </div>
+
+  <div class="profile-details">
+    <div><strong>Username:</strong> {{ profile.username }}</div>
+    <div><strong>Phone Number:</strong> {{ profile.phoneNumber }}</div>
+    <div><strong>Email:</strong> {{ profile.email }}</div>
+    <div><strong>Role:</strong> {{ profile.role }}</div>
+    <div><strong>Account Number:</strong> {{ profile.accountNumber }}</div>
+  </div>
+  <a [routerLink]="['/upload-picture']">Click to upload picture</a>
+ <div><br> <a routerLink="/dashboard" routerLinkActive="active">Go back to Dashboard? </a></div>
+</div>
+
