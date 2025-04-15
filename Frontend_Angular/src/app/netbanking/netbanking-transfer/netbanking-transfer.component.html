@@ -1,0 +1,31 @@
+<div class="netbanking-transfer-container">
+  <h2>Net Banking Transfer</h2>
+  <form (ngSubmit)="submitTransfer()">
+    <div class="form-group">
+      <label for="senderAccountNumber">Sender Account Number:</label>
+      <input type="text" id="senderAccountNumber" [(ngModel)]="transferData.senderAccountNumber" name="senderAccountNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="recipientAccountNumber">Recipient Account Number:</label>
+      <input type="text" id="recipientAccountNumber" [(ngModel)]="transferData.recipientAccountNumber" name="recipientAccountNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" [(ngModel)]="transferData.amount" name="amount" required>
+    </div>
+    <div class="form-group">
+      <label for="pin">PIN:</label>
+      <input type="password" id="pin" [(ngModel)]="transferData.pin" name="pin" required>
+    </div>
+    <button type="submit" class="btn">Transfer</button>
+  </form>
+
+  <div *ngIf="messageType === 'success'" class="message success">
+    <img src="assets/tick.gif" alt="Success" class="response-gif">
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="messageType === 'error'" class="message error">
+    <p>{{ message }}</p>
+  </div>
+</div>
