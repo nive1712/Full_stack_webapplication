@@ -1,0 +1,24 @@
+<div class="card-block-container">
+  <h2>Block Your Card</h2>
+  <form [formGroup]="cardBlockForm" (ngSubmit)="blockCard()">
+    <div class="form-group">
+      <label for="accountNumber">Account Number:</label>
+      <input id="accountNumber" formControlName="accountNumber" type="text" placeholder="Enter your account number">
+    </div>
+    <div class="form-group">
+      <label for="pin">PIN:</label>
+      <input id="pin" formControlName="pin" type="password" placeholder="Enter your PIN">
+    </div>
+    <div class="form-group">
+      <label for="reason">Reason:</label>
+      <input id="reason" formControlName="reason" type="text" placeholder="Enter reason for blocking your card">
+    </div>
+    <button type="submit" [disabled]="cardBlockForm.invalid">Block Card</button>
+  </form>
+
+  <div *ngIf="showSuccessGif" class="success-message ">
+    <img src="assets/tick.gif" alt="Success" width="200" height="140">
+    
+    <p>{{ successMessage }}</p>
+  </div>
+</div>
