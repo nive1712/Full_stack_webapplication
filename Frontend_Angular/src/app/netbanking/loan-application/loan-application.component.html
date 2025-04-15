@@ -1,0 +1,39 @@
+<div class="loan-application-container">
+  <h2>Loan Application</h2>
+  <form [formGroup]="loanForm" (ngSubmit)="submitLoanApplication()">
+    <div class="form-group">
+      <label for="bankAccountId">Bank Account ID:</label>
+      <input type="text" id="bankAccountId" formControlName="bankAccountId" required>
+    </div>
+    <div class="form-group">
+      <label for="totalPayment">Total Payment:</label>
+      <input type="number" id="totalPayment" formControlName="totalPayment" required>
+    </div>
+    <div class="form-group">
+      <label for="downPayment">Down Payment:</label>
+      <input type="number" id="downPayment" formControlName="downPayment" required>
+    </div>
+    <div class="form-group">
+      <label for="tenureYears">Tenure (in years):</label>
+      <input type="number" id="tenureYears" formControlName="tenureYears" required>
+    </div>
+    <div class="form-group">
+      <label for="loanType">Loan Type:</label>
+      <input type="text" id="loanType" formControlName="loanType" required>
+    </div>
+    <div class="form-group">
+      <label for="accountNumber">Account Number:</label>
+      <input type="text" id="accountNumber" formControlName="accountNumber" required>
+    </div>
+    <button type="submit" class="btn">Apply for Loan</button>
+  </form>
+
+  <div *ngIf="messageType === 'success'" class="message success">
+    <img src="assets/tick.gif" alt="Success" class="response-gif">
+    <p>{{ message }}</p>
+  </div>
+  
+  <div *ngIf="messageType === 'error'" class="message error">
+    <p>{{ message }}</p>
+  </div>
+</div>
