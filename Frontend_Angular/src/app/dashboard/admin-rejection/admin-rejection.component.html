@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Reject Card Block Request</h2>
+  <form (ngSubmit)="reject()">
+    <div class="form-group">
+      <label for="accountNumber">Account Number</label>
+      <input type="text" id="accountNumber" [(ngModel)]="rejectionData.accountNumber" name="accountNumber" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Reject</button>
+  </form>
+
+  <div *ngIf="message" class="alert alert-info mt-3">{{ message }}</div>
+
+  <div class="container mt-4" *ngIf="pendingRequests.length > 0; else noPendingRequests">
+    <h3>Pending Card Block Requests</h3>
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Account Number</th>
+          <th>Block Reason</th>
+          <th>Block Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of pendingRequests">
+          <td>{{ request.id }}</td>
+          <td>{{ request.bankAccount.accountNumber }}</td>
+          <td>{{ request.blockReason }}</td>
+          <td>{{ request.blockDate | date: 'yyyy-MM-dd' }}</td>
+          <td>{{ request.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noPendingRequests>
+    <div class="alert-box">
+      <p>No pending card block requests.</p>
+    </div>
+  </ng-template>
+</div>
