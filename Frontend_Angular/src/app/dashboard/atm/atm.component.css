@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('/assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .atm-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh; 
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .atm-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px; 
+    height: 300px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+  }
+  
+.navbar {
+  background-color: #333;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;  
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;  
+}
+
+.navbar-logo img {
+  width: auto;  
+  height: 40px;  
+  object-fit: contain;  
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;  
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;  
+  padding: 8px 16px;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+  border-radius: 5px;
+}
+.username {
+  font-size: 1.2rem; 
+  font-weight: bold;  
+  color: #dd5151;     
+  padding: 10px;     
+  background-color: #007bff; 
+  border-radius: 5px; 
+  margin-left: auto;  
+}
+
+
+  .atm-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    flex-grow: 1; 
+  }
+  
+  .atm-card a {
+    display: block;
+    margin-top: 10px;
+    color: #6a82fb;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .atm-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .atm-card a:hover {
+    color: #5a72db;
+  }
+  
+  @media (max-width: 800px) {
+    .atm-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .atm-card {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+  }
+  
