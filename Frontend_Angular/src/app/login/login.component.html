@@ -1,0 +1,30 @@
+<div class="page-container">
+  <div class="left-section">
+    <img src="/assets/background.png" alt="Left Section Image" class="section-image">
+    <div class="learn-more-container">
+      <a class="learn-more-link" routerLink="/components">Learn More</a>
+    </div>
+  </div>
+  <div class="right-section">
+    <div class="login-container">
+      <h2 class="login-title">User Login</h2>
+      <form (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" [(ngModel)]="credentials.username" name="username" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" [(ngModel)]="credentials.password" name="password" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p class="register-link">
+          Don't have an account? <a routerLink="/register">Register here</a>
+        </p>
+        <p class="admin-login-link">
+          Admin? <a routerLink="/admin-login">Login here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
