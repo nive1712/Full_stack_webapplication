@@ -1,0 +1,32 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="assets/icon.png" alt="Logo" />
+  </div>
+  <ul>
+    <li><a routerLink="/atm" routerLinkActive="active">ATM</a></li>
+    <li><a routerLink="/netbanking" routerLinkActive="active">NetBanking</a></li>
+    <li><a routerLink="/viewprofile" routerLinkActive="active">View Profile</a></li>
+    <li><a routerLink="/logout">Logout</a></li>
+  </ul>
+</nav>
+
+<div class="atm-container">
+  <div class="atm-image-container">
+    <div class="atm-image">
+    </div>
+  </div>
+  <div class="atm-card" (click)="navigateAndScroll('atm/deposit')">
+    <img src="/assets/deposit.jpg" alt="Deposit">
+    <a routerLink="/atm/deposit" routerLinkActive="active">Deposit</a>
+  </div>
+  <div class="atm-card" (click)="navigateAndScroll('atm/withdraw')">
+    <img src="/assets/withdraw.jpg" alt="Withdraw">
+    <a routerLink="/atm/withdraw" routerLinkActive="active">Withdraw</a>
+  </div>
+  <div class="atm-card" (click)="navigateAndScroll('atm/transfer')">
+    <img src="/assets/transfer.jpg" alt="Transfer">
+    <a routerLink="/atm/transfer" routerLinkActive="active">Transfer</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
