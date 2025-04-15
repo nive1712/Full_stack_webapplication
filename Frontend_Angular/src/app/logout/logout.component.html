@@ -1,0 +1,12 @@
+<div class="logout-container">
+    <h2>{{ logoutMessage }}</h2> <!-- Display logout message -->
+  
+    <div *ngIf="loading" class="spinner">
+    
+      <p>Loading...</p>
+    </div>
+  
+    <div *ngIf="!loading && logoutMessage === 'You have been logged out successfully.'">
+      <p>You have been logged out. Redirecting to the login page...</p>
+    </div>
+  </div>
