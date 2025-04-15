@@ -1,0 +1,33 @@
+<div class="container mt-4" *ngIf="pendingRequests.length > 0; else noPendingRequests">
+  <h3>Pending Card Block Requests to be approved </h3>
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th class="col-id">ID</th>
+        <th class="col-account-number">Account Number</th>
+        <th class="col-reason">Block Reason</th>
+        <th class="col-date">Block Date</th>
+        <th class="col-status">Status</th>
+        <th class="col-action">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of pendingRequests">
+        <td class="col-id">{{ request.id }}</td>
+        <td class="col-account-number">{{ request.bankAccount.accountNumber }}</td>
+        <td class="col-reason">{{ request.blockReason }}</td>
+        <td class="col-date">{{ request.blockDate | date: 'yyyy-MM-dd' }}</td>
+        <td class="col-status">{{ request.status }}</td>
+        <td class="col-action">
+          <button class="btn btn-success" (click)="approvePendingRequest(request)">Approve</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noPendingRequests>
+  <div class="alert-box">
+    <p>No pending card block requests.</p>
+  </div>
+</ng-template>
