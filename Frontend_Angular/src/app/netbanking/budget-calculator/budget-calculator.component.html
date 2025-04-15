@@ -1,0 +1,30 @@
+<div class="budget-calculator-container" id="budgetFormSection">
+  <h2>Budget Calculator</h2>
+  <form [formGroup]="budgetForm" (ngSubmit)="calculateBudget()">
+    <div class="form-group">
+      <label for="totalIncome">Total Income:</label>
+      <input id="totalIncome" formControlName="totalIncome" type="number" placeholder="Enter your total income">
+    </div>
+    <div class="form-group">
+      <label for="totalExpenses">Total Expenses:</label>
+      <input id="totalExpenses" formControlName="totalExpenses" type="number" placeholder="Enter your total expenses">
+    </div>
+    <div class="form-group">
+      <label for="debtRepayment">Debt Repayment:</label>
+      <input id="debtRepayment" formControlName="debtRepayment" type="number" placeholder="Enter your debt repayment">
+    </div>
+    <button type="submit" [disabled]="budgetForm.invalid">Calculate Budget</button>
+  </form>
+
+  <div *ngIf="pieChartData.datasets[0].data.length > 0" 
+       class="chart-container" 
+       [ngClass]="{'chart-move-left': chartMoveLeft}">
+    <canvas baseChart
+            [data]="pieChartData"
+            [type]="pieChartType"
+            [options]="pieChartOptions"
+            [legend]="pieChartLegend"
+            [plugins]="pieChartPlugins">
+    </canvas>
+  </div>
+</div>
