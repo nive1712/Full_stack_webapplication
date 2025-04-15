@@ -1,0 +1,18 @@
+<div class="dashboard-wrapper">
+  <img src="/assets/bankdashboard.jpg" alt="Top Left" class="top-left-image">
+  <div class="dashboard-container">
+    <div class="card" (click)="navigateTo('atm')">
+      <img src="/assets/atm.jpg" alt="ATM">
+      <a routerLink="/atm" routerLinkActive="active">ATM</a>
+    </div>
+    <div class="card" (click)="navigateTo('netbanking')">
+      <img src="/assets/netbanking.jpg" alt="NetBanking">
+      <a routerLink="/netbanking" routerLinkActive="active">NetBanking</a>
+    </div>
+    <div class="card" (click)="navigateTo('/viewprofile')">
+      <img src="/assets/viewprofile.jpg" alt="View Profile">
+      <a routerLink="['/viewprofile']" routerLinkActive="active">View Profile</a>
+    </div>
+    
+  </div>
+</div>
