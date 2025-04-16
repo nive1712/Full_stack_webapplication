@@ -1,0 +1,26 @@
+<div class="outer-box">
+  <div class="inner-box">
+    <form (ngSubmit)="register()">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" [(ngModel)]="user.username" name="username" required placeholder="Enter username">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" [(ngModel)]="user.password" name="password" required placeholder="Enter password">
+      </div>
+     
+      <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" [(ngModel)]="user.phoneNumber" name="phoneNumber" required placeholder="Enter phone number">
+      </div>
+      <div>
+        <label for="role">Role:</label>
+        <input type="text" id="role" [(ngModel)]="user.role" name="role" required placeholder="Enter role">
+      </div>
+      <button type="submit">Register</button>
+      <a routerLink="/login">Back to Login? </a>
+    </form>
+  </div>
+</div>
+
