@@ -1,0 +1,36 @@
+nav {
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav li {
+    display: inline;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+  
+  nav a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+  }
+  
+  div {
+    padding: 2rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
